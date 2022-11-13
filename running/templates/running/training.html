@@ -1,0 +1,508 @@
+{% extends "running/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="training_plans_container w-75 mx-auto" id="training_plans">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">C25K</h5>
+        <p class="card-text">Couch to 5k: 8 week training plan - 3 days a week.</p>
+        <a href="#" class="btn btn-primary" onclick="c25k()">See More</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">C210K</h5>
+        <p class="card-text">If you have completed C25K: 6 week training plan - 3 days a week.</p>
+        <a href="#" class="btn btn-primary"onclick="c210k()">See More</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="c210k w-75 mx-auto" id="c210kplan">
+	<h1 style="text-align: center;"> Coming Soon </h1>
+</div>
+
+<div class="c25k w-75 mx-auto" id="c25kplan">
+
+	<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Week</th>
+      <th scope="col">Day</th>
+      <th scope="col">Plan</th>
+      <th scope="col">Progress</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="tablerow1">
+      <th scope="row" rowspan="3">1</th>
+      <td>1</td>
+      <td><p>Duration: 30 min</p><p>5 min brisk warm-up walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 min.</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week1day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="1" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training1_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw1d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training1_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw1d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><p>Duration: 30 min</p><p>5 min brisk warm-up walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 min.</p>
+      	<form action="{% url 'completed_training' %}" method="post" name="week1day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="1" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training1_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw1d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training1_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw1d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 30 min</p><p>5 min brisk warm-up walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 min.</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week1day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="1" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training1_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw1d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training1_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw1d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="3">2</th>
+      <td>1</td>
+      <td><p>Duration: 31 min</p><p>5 min brisk warm-up walk. Then alternate 90 seconds of jogging and 2 min of walking for a total of 20 min.</p></td>
+         <form action="{% url 'completed_training' %}" method="post" name="week2day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="2" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training2_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw2d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training2_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw2d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><p>Duration: 31 min</p><p>5 min brisk warm-up walk. Then alternate 90 seconds of jogging and 2 min of walking for a total of 20 min.</p></td>
+       <form action="{% url 'completed_training' %}" method="post" name="week2day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="2" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training2_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw2d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training2_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw2d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+       
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 31 min</p><p>5 min brisk warm-up walk. Then alternate 90 seconds of jogging and 2 min of walking for a total of 20 min.</p></td>
+       <form action="{% url 'completed_training' %}" method="post" name="week2day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="2" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training2_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw2d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training2_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw2d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+       
+      
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="3">3</th>
+      <td>1</td>
+      <td><p>Duration: 28 min</p><p>5 min brisk warmup walk, then do two repetitions of the following: Jog for 90 secs; Walk for 90 secs; Jog for 3 mins; Walk for 3 mins.</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week3day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="3" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training3_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw3d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training3_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw3d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+     
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><p>Duration: 28 min</p><p>5 min brisk warmup walk, then do two repetitions of the following: Jog for 90 secs; Walk for 90 secs; Jog for 3 mins; Walk for 3 mins.</p></td>
+        <form action="{% url 'completed_training' %}" method="post" name="week3day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="3" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training3_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw3d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training3_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw3d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 28 min</p><p>5 min brisk warmup walk, then do two repetitions of the following: Jog for 90 secs; Walk for 90 secs; Jog for 3 mins; Walk for 3 mins.</p></td>
+        <form action="{% url 'completed_training' %}" method="post" name="week3day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="3" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training3_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw3d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training3_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw3d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="3">4</th>
+      <td>1</td>
+      <td><p>Duration: 31.5 min</p><p>5 min brisk warmup walk, then: Jog for 3 min; Walk for 90 secs; Jog for 5 mins; Walk for 2.5 mins; Jog for 3 mins; Walk for 90 secs; Jog for 5 mins.</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week4day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="4" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training4_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw4d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training4_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw4d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><p>Duration: 31.5 min</p><p>5 min brisk warmup walk, then: Jog for 3 min; Walk for 90 secs; Jog for 5 mins; Walk for 2.5 mins; Jog for 3 mins; Walk for 90 secs; Jog for 5 mins.</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week4day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="4" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training4_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw4d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training4_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw4d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 31.5 min</p><p>5 min brisk warmup walk, then: Jog for 3 min; Walk for 90 secs; Jog for 5 mins; Walk for 2.5 mins; Jog for 3 mins; Walk for 90 secs; Jog for 5 mins.</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week4day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="4" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training4_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw4d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training4_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw4d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="3">5</th>
+      <td>1</td>
+      <td><p>Duration: 31 min</p><p>5 min brisk warmup walk, then: Jog for 5 mins; Walk for 3 mins; Jog for 5 mins; Walk for 3 mins; Jog for 5 mins.</p></td>
+       <form action="{% url 'completed_training' %}" method="post" name="week5day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="5" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training5_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw5d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training5_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw5d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><p>Duration: 31 min</p><p>5 min brisk warmup walk, then: Jog 1.2 km (or 8 mins); Walk 0.8 km (or 5 mins); Jog 1.2 km (or 8 mins)</p></td>
+       <form action="{% url 'completed_training' %}" method="post" name="week5day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="5" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training5_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw5d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training5_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw5d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 30 min</p><p>5 min brisk warmup walk, then: Jog 3.2 km (or 20 mins) with no walking.</p></td>
+        <form action="{% url 'completed_training' %}" method="post" name="week5day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="5" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training5_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw5d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training5_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw5d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="3">6</th>
+      <td>1</td>
+      <td><p>Duration: 34 min</p><p>5 min brisk warmup walk, then: Jog for 5 mins; Walk for 3 mins; Jog for 8 mins; Walk for 3 mins; Jog for 5 mins.</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week6day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="6" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training6_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw6d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training6_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw6d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><p>Duration: 33 min</p><p>5 min brisk warmup walk, then: Jog 1.6 km (or 10 mins); Walk 0.4 km (or 3 mins); Jog 1.6 km (or 10 mins).</p></td>
+       <form action="{% url 'completed_training' %}" method="post" name="week6day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="6" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training6_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw6d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training6_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw6d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 32 min</p><p>5 min brisk warmup walk, then: Jog 3.6 km (or 22 minutes) with no walking.</p></td>
+       <form action="{% url 'completed_training' %}" method="post" name="week6day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="6" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training6_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw6d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training6_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw6d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="3">7</th>
+      <td>1</td>
+      <td><p>Duration: 35 min</p><p>5 min brisk warmup walk, then: Jog 4 km (or 25 minutes).</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week7day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="7" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training7_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw7d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training7_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw7d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><p>Duration: 35 min</p><p>5 min brisk warmup walk, then: Jog 4 km (or 25 minutes).</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week7day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="7" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training7_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw7d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training7_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw7d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 35 min</p><p>5 min brisk warmup walk, then: Jog 4 km (or 25 minutes).</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week7day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="7" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training7_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw7d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training7_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw7d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+      
+    </tr>
+
+    <tr>
+      <th scope="row" rowspan="3">8</th>
+      <td>1</td>
+      <td><p>Duration: 38 min</p><p>5 min brisk warmup walk, then: Jog 4.4 km (or 28 minutes).</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week8day1">
+      	   {% csrf_token %}
+        <input type="hidden" value="8" name="week">
+        <input type="hidden" value="1" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training8_1.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw8d1()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training8_1.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw8d1()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+     <tr>
+      <td>2</td>
+      <td><p>Duration: 38 min</p><p>5 min brisk warmup walk, then: Jog 4.4 km (or 28 minutes).</p></td>
+       <form action="{% url 'completed_training' %}" method="post" name="week8day2">
+      	   {% csrf_token %}
+        <input type="hidden" value="8" name="week">
+        <input type="hidden" value="2" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training8_2.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw8d2()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training8_2.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw8d2()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+     
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><p>Duration: 40 min</p><p>5 min brisk warmup walk, then: Jog 4.8 km (or 30 minutes).</p></td>
+      <form action="{% url 'completed_training' %}" method="post" name="week8day3">
+      	   {% csrf_token %}
+        <input type="hidden" value="8" name="week">
+        <input type="hidden" value="3" name="day">
+      <td class="align-middle text-center"> 
+      	{% if training8_3.completed == False %}
+
+<button type="submit" id="" name=""class="btn btn-secondary" onclick="submitw8d3()"> <i class="fa-solid fa-check"></i> </button>
+{% elif training8_3.completed == True %}
+<span style="color:green"><i class="fa-solid fa-check"></i> Completed</span> 
+<button type="submit" id="" name=""class="btn btn-link" onclick="submitw8d3()"> No, that was a mistake</i> </button>
+{% endif %}</form>
+</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+	</div>
+
+	<div class="c210k">
+
+	</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'running/training.js' %}"></script>
+{% endblock %}

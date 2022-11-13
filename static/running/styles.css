@@ -1,0 +1,133 @@
+#logo {
+	width: 200px;
+	position: relative;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.navbar {
+	background-color: #ffc80b;
+}
+
+.nav-link {
+	color: black !important;
+}
+
+
+@keyframes move {
+    0% {
+        left: 0%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+
+
+.carousel-inner {
+  	background-color: #ffc80b ;
+  }
+
+  .carousel-caption {
+    position: absolute;
+    z-index: 5;
+    display:table;
+    width:100%;
+    height:100%;
+}
+
+.absolute-div {
+    position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 75%;
+}
+
+.carousel-caption h1{
+	color: black;
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
+}
+
+.carousel-item {
+    position:relative;
+}
+
+.jumbotron {
+	text-align: center;
+	
+}
+
+
+
+.icons-container {
+	animation-name: move;
+	 animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+#charging {
+	font-size: 80px;
+}
+
+table {
+    margin-top: 20px;
+
+}
+
+
+.top_container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.top_container1 {
+display: flex;
+margin-left: 12.5%;
+}
+
+.top_container2 {
+    display: flex;
+    margin-right: 12.5%;
+
+}
+
+#add_run {
+    margin-top: 30px;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.training_plans_container {
+    margin-top: 20px;
+}
+
+#circle {
+    font-size: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.aircontainer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.text_air {
+    margin-top: 20px;
+}

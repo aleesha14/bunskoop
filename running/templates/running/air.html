@@ -1,0 +1,23 @@
+{% extends "running/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="aircontainer w-75 mx-auto">
+<h1> {{aqi}}</h1>
+
+<div id="circle" class="fa">
+	<i class="bi bi-record-circle-fill"></i>
+</div>
+
+
+	<h1 id="text_air"> </h1>
+	</div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'running/air.js' %}"></script>
+{% endblock %}

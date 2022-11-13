@@ -1,0 +1,77 @@
+{% extends "running/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+<div class="card text-center w-75 mx-auto">
+  <div class="card-header">
+    Longest Distance
+  </div>
+  <div class="card-body">
+    <h1 class="card-title">{{run_dist_max_record}} km</h1>
+    
+  </div>
+  {% if longest_run.title %}
+  <div class="card-footer text-muted">
+    {{longest_run.title}}, {{longest_run.date}}
+  </div>
+  {%else%}
+  <div class="card-footer text-muted">
+    {{longest_run.date}}
+  </div>
+  {%endif%}
+</div>
+
+<div class="card text-center w-75 mx-auto">
+  <div class="card-header">
+    Total Distance
+  </div>
+  <div class="card-body">
+    <h1 class="card-title">{{run_total_record}} km</h1>
+    
+  </div>
+  <div class="card-footer text-muted">
+    {{no_of_runs}} total runs
+  </div>
+</div>
+
+<div class="card text-center w-75 mx-auto">
+  <div class="card-header">
+    Fastest Pace
+  </div>
+  <div class="card-body">
+    <h1 class="card-title">{{pace_min_record}} min/km</h1>
+    
+  </div>
+  {% if longest_run.title %}
+  <div class="card-footer text-muted">
+    {{fastest_run.title}}, {{fastest_run.date}}
+  </div>
+  {%else%}
+  <div class="card-footer text-muted">
+    {{fastest_run.date}}
+  </div>
+  {%endif%}
+</div>
+
+<div class="card text-center w-75 mx-auto">
+  <div class="card-header">
+    Total Time
+  </div>
+  <div class="card-body">
+    <h1 class="card-title">{{time_tot}} min</h1>
+    
+  </div>
+  <div class="card-footer text-muted">
+    {{no_of_runs}} total runs
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'running/records.js' %}"></script>
+{% endblock %}
